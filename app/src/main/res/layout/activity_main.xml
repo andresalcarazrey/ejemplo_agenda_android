@@ -13,13 +13,25 @@
         android:id="@+id/boton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pulsame"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Nuevo contacto"
+        app:layout_constraintBottom_toTopOf="@id/botonList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etTexto4"
         android:onClick="addPersonaToModel"
     />
+
+    <Button
+        android:id="@+id/botonList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver agenda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton1"
+        android:onClick="irAgenda"
+        />
         <TextView
         android:id="@+id/texto1"
         android:layout_width="wrap_content"

@@ -1,13 +1,18 @@
 package com.politecnicomalaga.ejemplo1.model;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.google.android.material.animation.ImageMatrixProperty;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Agenda {
     private int codigo;
@@ -16,6 +21,14 @@ public class Agenda {
 
     public Agenda(int codigo) {
         this.codigo = codigo;
+        mapaAgenda = new HashMap<String, Persona>();
+
+        for(long contador = 0; contador<1000000;contador++) {
+            mapaAgenda.put("600000"+contador,new Persona("nombre_" + contador, "apellidos_" + contador,"600000"+contador,"direccion_"+contador));
+        }
+
+
+
     }
 
     //Getter

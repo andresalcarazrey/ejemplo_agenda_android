@@ -38,6 +38,8 @@ public class ListActivity extends AppCompatActivity {
 
         //Activamos el RecyclerView con los datos
 
-        c.loadRV((RecyclerView)findViewById(R.id.rvListaPersonas));
+        c.loadRV((RecyclerView)findViewById(R.id.rvListaPersonas),this);
     }
+
+
 }

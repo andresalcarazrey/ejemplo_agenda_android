@@ -1,6 +1,9 @@
 package com.politecnicomalaga.ejemplo1.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 
@@ -44,12 +47,35 @@ public class MainActivity extends AppCompatActivity {
         EditText etDireccion = (EditText)findViewById(R.id.etTexto4);
 
         //Convertir la zona con escritura de la pantalla en Strings
-        nombre = etNombre.getText().toString();
+        Editable editNombre = etNombre.getText();
+        nombre = editNombre.toString();
+
         apellidos = etApellidos.getText().toString();
         telefono = etTelefono.getText().toString();
         direccion = etDireccion.getText().toString();
 
         c.addPersona(nombre,apellidos,telefono,direccion);
 
+    }
+
+
+    //Método para pasar a la lista de personas
+    public void irAgenda(View v) {
+        Intent i = new Intent(this, ListActivity.class);
+        startActivity(i);
+    }
+
+
+    public void irMapa(View v) {
+        // Create a Uri from an intent string. Use the result to create an Intent.
+        Uri gmmIntentUri = Uri.parse("google.streetview:cbll=46.414382,10.013988");
+
+// Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+// Make the Intent explicit by setting the Google Maps package
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+// Attempt to start an activity that can handle the Intent
+        startActivity(mapIntent);
     }
 }
